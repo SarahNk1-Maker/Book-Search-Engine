@@ -2,6 +2,7 @@ import './App.css';
 import {
   ApolloClient,
   InMemoryCache,
+  ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -35,11 +36,12 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <Outlet />
-    </>
-  );
+   
+      <ApolloProvider client={client}>
+        <Navbar />
+        <Outlet />
+      </ApolloProvider>
+    );
 }
 
 export default App;
