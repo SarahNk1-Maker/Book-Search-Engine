@@ -1,4 +1,4 @@
-const { User, Book } = require('../../models'); // Import your Mongoose models
+const { User, Book } = require('../models'); // Import your Mongoose models
 
 const resolvers = {
   Query: {
